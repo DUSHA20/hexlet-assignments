@@ -6,6 +6,9 @@ import java.util.Map;
 // BEGIN
 class App {
     public static Map<String, Integer> getWordCount(String sentence) {
+        if (sentence.equals("")) {
+            return new HashMap<String, Integer>();
+        }
         Map<String, Integer> dictionary = new HashMap<>();
         String[] wordsFromSentence = sentence.split(" ");
 
@@ -21,8 +24,11 @@ class App {
     }
 
     public static String toString(Map<String, Integer> wordsFromDictionary) {
+        if (wordsFromDictionary.isEmpty()) {
+            return "{}";
+        }
         String resultDictionary = "{\n";
-        for (Map.Entry<String, Integer> word: wordsFromDictionary.entrySet()) {
+        for (Map.Entry<String, Integer> word : wordsFromDictionary.entrySet()) {
             resultDictionary = resultDictionary + "  " + word.getKey() + ": " + word.getValue() + "\n";
         }
         resultDictionary = resultDictionary + "}";

@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 
 // BEGIN
 public class App {
-    public static List<Map> findWhere(List<Map> books, Map<String, String> where) {
+    public static List<Map<String, String>> findWhere(List<Map<String, String>> books, Map<String, String> where) {
         int sizeOfList = books.size();
         int countOfConcidences = 0;
         List<Integer> matchIndices = new ArrayList<>(); // список индексов совпадений
@@ -43,4 +43,5 @@ public class App {
         }
     }
 }
+
 //END

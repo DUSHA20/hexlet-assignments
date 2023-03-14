@@ -36,12 +36,7 @@ public class App {
             books.remove(matchIndex);
         }
 
-        if (books.isEmpty()) {
-            return new ArrayList<>();
-        } else {
-            return books;
-        }
+        return books;
     }
 }
-
 //END

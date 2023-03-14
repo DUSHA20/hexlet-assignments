@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 
 // BEGIN
 public class App {
-    public static List<Map<String, String>> findWhere(List<Map<String, String>> books, Map<String, String> where) {
+    public static List<Map> findWhere(List<Map> books, Map<String, String> where) {
         int sizeOfList = books.size();
         int countOfConcidences = 0;
         List<Integer> matchIndices = new ArrayList<>(); // список индексов совпадений
@@ -15,16 +15,15 @@ public class App {
         for (int i = 0; i < sizeOfList; i++) {
             List<String> val1 = new ArrayList<>((books.get(i)).values());
             List<String> val2 = new ArrayList<>(where.values());
+            int sizeOfListValues2 = val2.size();
 
-            int sizeOfListValues2 = 2;
             for (int n = 0; n < sizeOfListValues2; n++) {
-                String currentValue1 = val1.get(n + 1); // текущее значение в первом словаре
-                String currentValue2 = val2.get(n); // текущее значение во втором словаре
-
-                if(currentValue1.equals(currentValue2)) {
-                    countOfConcidences++;  // считаеется количесвто совпадений значений
+                String currentValue2 = val2.get(n);
+                if (val1.contains(currentValue2)) {
+                    countOfConcidences++;
                 }
             }
+
             if (countOfConcidences != sizeOfListValues2) {
                 matchIndices.add(i);
             }
@@ -36,7 +35,11 @@ public class App {
             books.remove(matchIndex);
         }
 
-        return books;
+        if (books.isEmpty()) {
+            return new ArrayList<>();
+        } else {
+            return books;
+        }
     }
 }
 //END

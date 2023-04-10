@@ -5,12 +5,22 @@ import java.util.Arrays;
 
 // BEGIN
 class App {
-    public static List<String> takeOldestMans(List<Map<String, String>> users) {
-        return users.stream()
-                .filter(user -> user.get("gender").equals("male"))
-                .sorted(Comparator.comparingLong(user -> LocalDate.parse(user.get("birthday")).toEpochDay()))
-                .map(user -> user.get("name"))
-                .collect(Collectors.toList());
+    public static String[] duplicateValues(String[] items) {
+
+        return Arrays.stream(items)
+                .flatMap(item -> Arrays.stream(new String[] {item, item}))
+                .toArray(String[]::new);
+    }
+
+    public static String[][] enlargeArrayImage(String[][] image) {
+
+        String[][] horizontalyStretched = Arrays.stream(image)
+                .map(App::duplicateValues)
+                .toArray(String[][]::new);
+
+        return Arrays.stream(horizontalyStretched)
+                .flatMap(item -> Arrays.stream(new String[][] {item, item}))
+                .toArray(String[][]::new);
     }
 }
 // END

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 
 // BEGIN
-class Sorted {
+class App {
     public static List<String> takeOldestMans(List<Map<String, String>> users) {
         return users.stream()
                 .filter(user -> user.get("gender").equals("male"))

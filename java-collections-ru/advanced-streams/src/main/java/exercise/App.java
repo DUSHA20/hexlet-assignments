@@ -13,7 +13,7 @@ class App {
                 indexOfquotes = indexOfquotes + i + " ";
             }
         }
-        String resultLine = "\"";
+        String resultLine = "";
         String wordsInQuotes = "";
         String[] arrayOfIndex = indexOfquotes.split(" ");
         for (int j = 0; j < arrayOfIndex.length - 1; j += 2) {
@@ -28,7 +28,7 @@ class App {
             }
         }
         int endIndex = resultLine.length();
-        String finalResult = resultLine.substring(0, endIndex - 1) + "\"";
+        String finalResult = resultLine.substring(0, endIndex - 1);
         return finalResult;
     }
 }

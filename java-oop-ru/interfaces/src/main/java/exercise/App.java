@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 // BEGIN
-public static class App implements Home {
+public class App implements Home {
+
+    private double area;
 
     public double getArea() {
         return area;

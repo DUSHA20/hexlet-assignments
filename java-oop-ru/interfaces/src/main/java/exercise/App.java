@@ -14,7 +14,7 @@ public class App implements Home {
 
     public static List<String> buildApartmentsList(List<Home> homes, int n) {
         return homes.stream()
-                .sorted(Comparator.comparingDouble(Home::getArea))
+                .sorted((h1, h2) -> Double.compare(h1.getArea(), h2.getArea()))
                 .limit(n)
                 .map(Object::toString)
                 .collect(Collectors.toList());

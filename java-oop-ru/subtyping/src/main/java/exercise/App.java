@@ -3,28 +3,28 @@ package exercise;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.HashMap;
 
 // BEGIN
 public class App implements KeyValueStorage {
 
-    private Map<String, String> database;
-
-    public App(Map<String, String> initialData) {
-        this.database = new HashMap<String, String>();
-        this.database.putAll(initialData);
-    }
-
+    // Публичный статический метод для обмена ключей и значений в объекте базы данных
     public static void swapKeyValue(KeyValueStorage storage) {
-        Map<String, String> database = storage.toMap();
-        Map<String, String> swappedDatabase = new HashMap<String, String>();
+        String[] keys = new String[storage.toMap().size()];
+        String[] values = new String[storage.toMap().size()];
+        int index = 0;
 
-        for (Map.Entry<String, String> entry : database.entrySet()) {
-            swappedDatabase.put(entry.getValue(), entry.getKey());
+        // Сохраняем ключи и значения в отдельные массивы
+        for (Entry<String, String> entry : storage.toMap().entrySet()) {
+            keys[index] = entry.getKey();
+            values[index] = entry.getValue();
+            index++;
         }
 
-        database.clear();
-        database.putAll(swappedDatabase);
+        // Очищаем исходное хранилище и добавляем обмененные значения
+        storage.clear();
+        for (int i = 0; i < keys.length; i++) {
+            storage.set(values[i], keys[i]);
+        }
     }
 
     @Override

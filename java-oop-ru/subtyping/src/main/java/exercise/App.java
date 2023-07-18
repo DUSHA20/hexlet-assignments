@@ -22,21 +22,22 @@ public class App implements KeyValueStorage {
 
         @Override
         public void set(String key, String value) {
-
+            database.put(key, value);
         }
 
         @Override
         public void unset(String key) {
+            database.remove(key);
         }
 
         @Override
         public String get(String key, String defaultValue) {
-            return null;
+            return database.getOrDefault(key, defaultValue);
         }
 
         @Override
         public Map<String, String> toMap() {
-            return null;
+            return new HashMap<>(database);
         }
     }
 }

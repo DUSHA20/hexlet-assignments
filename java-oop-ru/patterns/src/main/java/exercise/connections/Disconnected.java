@@ -4,9 +4,9 @@ package exercise.connections;
 //import exercise.TcpConnection;
 
 public class Disconnected implements Connection {
-    private Conection connection;
+    private Connection connection;
 
-    public Disconnected(Conection connection) {
+    public Disconnected(Connection connection) {
         this.connection = connection;
     }
 

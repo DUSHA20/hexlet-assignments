@@ -4,9 +4,9 @@ package exercise.connections;
 //import exercise.TcpConnection;
 
 public class Connected implements Connection {
-    private Conection connection;
+    private Connection connection;
 
-    public Connected(Conection connection) {
+    public Connected(Connection connection) {
         this.connection = connection;
     }
 

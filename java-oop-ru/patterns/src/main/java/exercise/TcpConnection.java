@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 // BEGIN
-public class TcpConnection {
+public class TcpConnection implements Connection {
     private Connection currentState;
     private String ipAddress;
     private int port;

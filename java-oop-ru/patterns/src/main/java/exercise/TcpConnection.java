@@ -3,7 +3,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 // BEGIN
-public class TcpConnection implements Connection {
+import exercise.connections.Connection;
+import exercise.connections.Disconnected;
+
+public class TcpConnection {
     private Connection currentState;
     private String ipAddress;
     private int port;

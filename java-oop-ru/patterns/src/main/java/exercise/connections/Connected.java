@@ -1,8 +1,6 @@
 package exercise.connections;
 
 // BEGIN
-//import exercise.TcpConnection;
-
 public class Connected implements Connection {
     private Connection connection;
 

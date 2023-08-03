@@ -1,12 +1,12 @@
 package exercise.connections;
 
 // BEGIN
-import exercise.TcpConnection;
+//import exercise.TcpConnection;
 
 public class Connected implements Connection {
-    private TcpConnection connection;
+    private Conection connection;
 
-    public Connected(TcpConnection connection) {
+    public Connected(Conection connection) {
         this.connection = connection;
     }
 

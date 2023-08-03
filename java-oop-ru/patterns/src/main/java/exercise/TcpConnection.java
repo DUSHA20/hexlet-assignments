@@ -3,9 +3,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 // BEGIN
-import exercise.Connection;
-import exercise.Disconnected;
-
 public class TcpConnection {
     private Connection currentState;
     private String ipAddress;
@@ -14,7 +11,7 @@ public class TcpConnection {
     public TcpConnection(String ipAddress, int port) {
         this.ipAddress = ipAddress;
         this.port = port;
-        this.currentState = new Disconnected(this);
+        this.currentState = new Disconnected(this); // ?
     }
 
     public void changeState(Connection state) {

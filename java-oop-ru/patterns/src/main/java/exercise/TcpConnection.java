@@ -3,6 +3,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 // BEGIN
+import exercise.Connection;
+import exercise.Disconnected;
+
 public class TcpConnection {
     private Connection currentState;
     private String ipAddress;

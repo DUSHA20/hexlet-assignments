@@ -13,10 +13,6 @@ public class App {
 
     public static void printSquare(Circle circle) {
         try {
-            if (circle.getRadius() < 0) {
-                throw new NegativeRadiusException("Radius cannot be negative");
-            }
-
             double square = circle.getSquare();
             System.out.println(Math.round(square));
         } catch (NegativeRadiusException e) {

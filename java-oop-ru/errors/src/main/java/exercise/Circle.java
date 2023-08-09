@@ -7,9 +7,6 @@ public class Circle {
 
     public Circle(Point center, int radius) {
         this.center = center;
-        if (radius < 0) {
-            throw new NegativeRadiusException("Radius cannot be negative");
-        }
         this.radius = radius;
     }
 
@@ -17,7 +14,7 @@ public class Circle {
         return radius;
     }
 
-    public double getSquare() {
+    public double getSquare() throws NegativeRadiusException {
         if (radius < 0) {
             throw new NegativeRadiusException("Radius cannot be negative");
         }
